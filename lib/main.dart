@@ -27,7 +27,7 @@ class FinverseApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Finverse',
         theme: ThemeData(
-          primarySwatch: Colors.indigo,
+          primarySwatch: Colors.red,
           useMaterial3: true,
         ),
         initialRoute: DashboardScreen.routeName,
