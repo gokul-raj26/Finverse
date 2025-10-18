@@ -5,13 +5,25 @@ import 'package:finverse/screens/asset_view_screen.dart';
 import 'package:finverse/screens/dashboard_screen.dart';
 import 'package:finverse/screens/debt_screen.dart';
 import 'package:finverse/services/db_service.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DBService.instance.init();
-  runApp(const FinverseApp());
+
+  // Initialize local DB only for mobile (sqflite not supported on web)
+  if (!kIsWeb) {
+    await DBService.instance.init();
+  }
+
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode, // Only show DevicePreview in debug mode
+      builder: (context) => const FinverseApp(),
+    ),
+  );
 }
 
 class FinverseApp extends StatelessWidget {
@@ -30,6 +42,11 @@ class FinverseApp extends StatelessWidget {
           primarySwatch: Colors.red,
           useMaterial3: true,
         ),
+        // 👇 Required for DevicePreview
+        useInheritedMediaQuery: true,
+        locale: DevicePreview.locale(context),
+        builder: DevicePreview.appBuilder,
+
         initialRoute: DashboardScreen.routeName,
         routes: {
           DashboardScreen.routeName: (_) => const DashboardScreen(),
