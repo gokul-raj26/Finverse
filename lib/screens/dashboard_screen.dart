@@ -42,9 +42,9 @@ class DashboardScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
         onPressed: () => Navigator.pushNamed(context, AddAssetScreen.routeName),
         tooltip: 'Add Asset',
+        child: const Icon(Icons.add),
       ),
       body: RefreshIndicator(
         onRefresh: () async {

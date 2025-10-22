@@ -39,7 +39,7 @@ class FinverseApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Finverse',
         theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.blue,
           useMaterial3: true,
         ),
         // 👇 Required for DevicePreview

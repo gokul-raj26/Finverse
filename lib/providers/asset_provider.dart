@@ -41,7 +41,9 @@ class AssetProvider extends ChangeNotifier {
 
   double get totalAssetsValue {
     double total = 0;
-    for (var a in _assets) total += a.value;
+    for (var a in _assets) {
+      total += a.value;
+    }
     return total;
   }
 

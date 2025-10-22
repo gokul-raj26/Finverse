@@ -4,7 +4,6 @@ import 'package:finverse/models/debt_model.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
-import 'dart:io';
 
 class DBService {
   DBService._privateConstructor();
@@ -76,8 +75,7 @@ class DBService {
 
   Future<int> updateAsset(AssetModel asset) async {
     final db = await database;
-    return await db.update('assets', asset.toMap(),
-        where: 'id = ?', whereArgs: [asset.id]);
+    return await db.update('assets', asset.toMap(), where: 'id = ?', whereArgs: [asset.id]);
   }
 
   Future<int> deleteAsset(int id) async {
@@ -99,8 +97,7 @@ class DBService {
 
   Future<int> updateDebt(DebtModel debt) async {
     final db = await database;
-    return await db.update('debts', debt.toMap(),
-        where: 'id = ?', whereArgs: [debt.id]);
+    return await db.update('debts', debt.toMap(), where: 'id = ?', whereArgs: [debt.id]);
   }
 
   Future<int> deleteDebt(int id) async {

@@ -41,13 +41,17 @@ class DebtProvider extends ChangeNotifier {
 
   double get totalDebts {
     double total = 0;
-    for (var d in _debts) total += d.principal;
+    for (var d in _debts) {
+      total += d.principal;
+    }
     return total;
   }
 
   double get totalMonthlyEmi {
     double sum = 0;
-    for (var d in _debts) sum += d.emi;
+    for (var d in _debts) {
+      sum += d.emi;
+    }
     return sum;
   }
 }

@@ -1,0 +1,33 @@
+{
+  // === Flutter Productivity ===
+  "dart.flutterHotReloadOnSave": "all", // Auto hot reload every time you save
+  "dart.previewHotReloadOnSaveWatcher": true, // Watch for more accurate reloads
+  "dart.hotReloadOnSave": "all",
+  "dart.flutterShowEmulators": "local", // Show emulator options easily
+  "dart.flutterRunLogFile": "logs/flutter_run.log", // Optional: store run logs
+  // === Code Formatting ===
+  "editor.formatOnSave": true, // Auto-format code when saving
+  "editor.formatOnType": true,
+  "editor.tabSize": 2, // Standard Flutter indentation
+  "dart.lineLength": 100, // Keeps code neat
+  // === UI / Developer Experience ===
+  "workbench.startupEditor": "none", // No welcome screen
+  "files.autoSave": "onWindowChange", // Auto-save when switching windows
+  "terminal.integrated.fontSize": 14,
+  "editor.fontFamily": "JetBrains Mono, Fira Code, monospace",
+  "editor.fontLigatures": true,
+  // === Performance Tweaks ===
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.dart_tool/**": true,
+    "**/build/**": true,
+    "**/.idea/**": true
+  },
+  "search.exclude": {
+    "**/build": true,
+    "**/.dart_tool": true
+  },
+  // === Optional Aesthetic ===
+  "workbench.colorTheme": "Default Dark Modern",
+  "window.zoomLevel": 0
+}

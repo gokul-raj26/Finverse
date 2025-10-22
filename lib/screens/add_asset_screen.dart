@@ -61,7 +61,7 @@ class _AddAssetScreenState extends State<AddAssetScreen> {
               ),
               const SizedBox(height: 12),
               DropdownButtonFormField<String>(
-                value: _type,
+                initialValue: _type,
                 items: const [
                   DropdownMenuItem(value: 'Cash', child: Text('Cash')),
                   DropdownMenuItem(value: 'Stock', child: Text('Stock')),
@@ -76,15 +76,14 @@ class _AddAssetScreenState extends State<AddAssetScreen> {
               TextFormField(
                 controller: _valueCtrl,
                 decoration: const InputDecoration(labelText: 'Value (₹)'),
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-                validator: (v) =>
-                    (v == null || v.trim().isEmpty) ? 'Enter current value' : null,
+                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                validator: (v) => (v == null || v.trim().isEmpty) ? 'Enter current value' : null,
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _quantityCtrl,
                 decoration: const InputDecoration(labelText: 'Quantity (optional)'),
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                keyboardType: const TextInputType.numberWithOptions(decimal: true),
               ),
               const SizedBox(height: 12),
               TextFormField(

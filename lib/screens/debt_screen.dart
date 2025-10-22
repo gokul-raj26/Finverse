@@ -83,14 +83,18 @@ class _DebtScreenState extends State<DebtScreen> {
                         final d = debtProv.debts[i];
                         return Dismissible(
                           key: ValueKey(d.id),
-                          background: Container(color: Colors.red, child: const Icon(Icons.delete, color: Colors.white)),
+                          background: Container(
+                              color: Colors.red,
+                              child: const Icon(Icons.delete, color: Colors.white)),
                           onDismissed: (_) {
                             debtProv.deleteDebt(d.id!);
-                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Debt deleted')));
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(const SnackBar(content: Text('Debt deleted')));
                           },
                           child: ListTile(
                             title: Text(d.name),
-                            subtitle: Text('Principal: ₹${d.principal.toStringAsFixed(2)} • EMI: ₹${d.emi.toStringAsFixed(2)}'),
+                            subtitle: Text(
+                                'Principal: ₹${d.principal.toStringAsFixed(2)} • EMI: ₹${d.emi.toStringAsFixed(2)}'),
                             trailing: Text(d.startDate),
                           ),
                         );
@@ -116,21 +120,22 @@ class _DebtScreenState extends State<DebtScreen> {
                         TextFormField(
                           controller: _principalCtrl,
                           decoration: const InputDecoration(labelText: 'Principal (₹)'),
-                          keyboardType: TextInputType.numberWithOptions(decimal: true),
-                          validator: (v) => (v == null || v.trim().isEmpty) ? 'Enter principal' : null,
+                          keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                          validator: (v) =>
+                              (v == null || v.trim().isEmpty) ? 'Enter principal' : null,
                         ),
                         const SizedBox(height: 8),
                         TextFormField(
                           controller: _emiCtrl,
                           decoration: const InputDecoration(labelText: 'Monthly EMI (₹)'),
-                          keyboardType: TextInputType.numberWithOptions(decimal: true),
+                          keyboardType: const TextInputType.numberWithOptions(decimal: true),
                           validator: (v) => (v == null || v.trim().isEmpty) ? 'Enter EMI' : null,
                         ),
                         const SizedBox(height: 8),
                         TextFormField(
                           controller: _rateCtrl,
                           decoration: const InputDecoration(labelText: 'Interest rate (annual %)'),
-                          keyboardType: TextInputType.numberWithOptions(decimal: true),
+                          keyboardType: const TextInputType.numberWithOptions(decimal: true),
                         ),
                         const SizedBox(height: 8),
                         TextFormField(
