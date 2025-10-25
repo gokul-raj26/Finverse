@@ -1,21 +1,44 @@
 {
-  // === Flutter Productivity ===
-  "dart.flutterHotReloadOnSave": "all", // Auto hot reload every time you save
-  "dart.previewHotReloadOnSaveWatcher": true, // Watch for more accurate reloads
-  "dart.hotReloadOnSave": "all",
-  "dart.flutterShowEmulators": "local", // Show emulator options easily
-  "dart.flutterRunLogFile": "logs/flutter_run.log", // Optional: store run logs
+  // ============================================================
+  // 🚀 FLUTTER DEVELOPMENT – Optimized for Speed & Clean Workflow
+  // ============================================================
+  // === Hot Reload / Debugging ===
+  "dart.flutterHotReloadOnSave": "all", // Instant hot reload on save
+  "dart.previewHotReloadOnSaveWatcher": true, // More accurate reloads
+  "dart.flutterShowEmulators": "local", // Show emulator picker easily
+  "dart.flutterRunLogFile": "logs/flutter_run.log", // Optional: store Flutter logs
   // === Code Formatting ===
-  "editor.formatOnSave": true, // Auto-format code when saving
+  "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "editor.tabSize": 2, // Standard Flutter indentation
-  "dart.lineLength": 100, // Keeps code neat
+  "editor.tabSize": 2,
+  "dart.lineLength": 100,
+  "editor.defaultFormatter": "Dart-Code.dart-code", // Force use of Dart formatter
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
   // === UI / Developer Experience ===
-  "workbench.startupEditor": "none", // No welcome screen
-  "files.autoSave": "onWindowChange", // Auto-save when switching windows
+  "workbench.startupEditor": "none", // Skip welcome screen
+  "files.autoSave": "onWindowChange",
   "terminal.integrated.fontSize": 14,
   "editor.fontFamily": "JetBrains Mono, Fira Code, monospace",
   "editor.fontLigatures": true,
+  "editor.cursorSmoothCaretAnimation": "on", // Smooth typing animation
+  "editor.minimap.enabled": false, // Cleaner UI
+  "breadcrumbs.enabled": true, // Show file path breadcrumbs
+  "explorer.compactFolders": false, // Full folder names
+  "editor.smoothScrolling": true,
+  // === IntelliSense / Productivity ===
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.inlineSuggest.enabled": true, // Inline AI-style code hints
+  "editor.parameterHints.enabled": true,
+  "editor.hover.delay": 200,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
   // === Performance Tweaks ===
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -27,7 +50,22 @@
     "**/build": true,
     "**/.dart_tool": true
   },
-  // === Optional Aesthetic ===
+  "dart.vmAdditionalArgs": [
+    "--enable-asserts"
+  ], // Safer debugging mode
+  "dart.debugExternalLibraries": false, // Skip debug in packages
+  "dart.debugSdkLibraries": false,
+  // === Visual / Theme ===
   "workbench.colorTheme": "Default Dark Modern",
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "editor.renderWhitespace": "boundary", // Show indentation markers
+  "editor.rulers": [
+    100
+  ], // Vertical line for line length
+  "editor.cursorBlinking": "expand",
+  // === Optional Extensions (if installed) ===
+  "errorLens.enabled": true, // Inline error highlights
+  "errorLens.statusBarColorsEnabled": true,
+  "bracketPairColorization.enabled": true, // Colored brackets for readability
+  "Mizu Icons": "Mizu Icons" // Better file icons
 }
